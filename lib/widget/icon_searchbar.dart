@@ -10,7 +10,7 @@ class IconSearchbar extends StatelessWidget implements PreferredSizeWidget {
       title:Row(
         mainAxisAlignment:MainAxisAlignment.center,
         children: [
-          Lottie.asset('lottie/movie.json',height:80),
+          // Lottie.asset('lottie/movie.json',height:80),
           const SizedBox(width:15,),
           Container(
             width:MediaQuery.of(context).size.width*.55,
@@ -18,6 +18,21 @@ class IconSearchbar extends StatelessWidget implements PreferredSizeWidget {
             decoration:BoxDecoration(
               color:Colors.white,
               borderRadius:BorderRadius.circular(6),
+            ),
+            child:TextField(
+              decoration:InputDecoration(
+                prefixIcon:const Icon(Icons.search),
+                suffixIcon:IconButton(
+                  onPressed:(){},
+                  icon:const Icon(Icons.cancel),
+                ),
+                hintText:'Search',
+                border:InputBorder.none ,
+              ),
+              style:const TextStyle(
+                color:Colors.grey,
+                fontWeight:FontWeight.bold,
+              ),
             ),
           ),
         ],

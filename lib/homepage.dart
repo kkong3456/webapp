@@ -3,7 +3,7 @@ import 'package:webapp/widget/icon_searchbar.dart';
 import 'package:webapp/widget/main_drawer.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -12,11 +12,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar:IconSearchbar(),
-      drawer:const MainDrawer(),
-      body:const Center(
-        child:Text('Movie site')
+      drawer:MainDrawer(),
+      body:SingleChildScrollView(
+        child:Column(
+          children: [
+            Text(
+              'Top rated movies',
+              style:const TextStyle(fontSize:20,fontWeight:FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }
