@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
 import 'homepage.dart';
 
 
@@ -8,14 +8,21 @@ void main(){
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final _router=GoRouter(routes:[
+    GoRoute(
+      path:'/',
+      builder:(context,state)=>HomePage(),
+    )
+  ]);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner:false,
       theme:ThemeData.dark(),
-      home:const HomePage(),
+      routerConfig:_router, 
     );
   }
 }
